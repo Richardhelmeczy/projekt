@@ -1,0 +1,43 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:migrate:dev:latest": "ts-node -T lib/scripts/migrations/latest.ts",
+    "db:migrate:dev:new": "ts-node -T lib/scripts/migrations/new.ts",
+    "db:migrate:dev:down": "ts-node -T lib/scripts/migrations/down.ts",
+    "db:codegen:dev": "kysely-codegen --camel-case --url data/app.db --out-file src/lib/db.d.ts",
+    "db:seed:dev": "ts-node -T lib/scripts/seed-db.ts"
+  },
+  "dependencies": {
+    "@types/node": "20.6.0",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.15",
+    "better-sqlite3": "^8.6.0",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "kysely": "^0.26.3",
+    "next": "14.0.4",
+    "postcss": "8.4.29",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.49.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "@next/eslint-plugin-next": "^13.4.19",
+    "@types/better-sqlite3": "^7.6.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "kysely-codegen": "^0.10.1",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1"
+  }
+}
